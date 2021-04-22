@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 import ptBr from 'date-fns/locale/pt-BR';
+import Link from 'next/link';
 
 import styles from './styles.module.scss';
 
@@ -10,7 +11,11 @@ export function Header() {
 
   return (
     <header className={styles.headerContainer}>
-      <img src="/logo.svg" alt="logo" />
+      <Link href="/">
+        <a>
+          <img src="/logo.svg" alt="logo" />
+        </a>
+      </Link>
 
       <p>O melhor para voce ouvir, sempre</p>
 
