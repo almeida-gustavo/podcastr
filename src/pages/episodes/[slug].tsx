@@ -9,6 +9,7 @@ import { convertDurationToTimeString } from '../../utils/convertDurationToTimeSt
 import styles from './episode.module.scss';
 import Link from 'next/link';
 import { usePlayer } from '../../contexts/PlayerContext';
+import Head from 'next/head';
 
 type Episode = {
   id: string;
@@ -31,6 +32,10 @@ export default function Episode({ episode: ep }: EpisodeProps) {
 
   return (
     <div className={styles.episode}>
+      <Head>
+        <title>{ep.title}</title>
+      </Head>
+
       <div className={styles.thumbnailContainer}>
         <Link href="/">
           <button type="button">
